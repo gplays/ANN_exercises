@@ -1,0 +1,14 @@
+P=[2 1 -2 -1; 2 -2 2 1];
+T=[0 1 0 1];
+TF = 'hardlim';
+LF = 'learnp';
+
+net = newp(P,T,TF,LF);
+
+net= init(net);
+
+net.IW{1,1};
+[net,tr_descr] = train(net,P,T);
+net.trainParam.epochs = 20;
+Pnew=[1;-0.3];
+sim(net,Pnew);
