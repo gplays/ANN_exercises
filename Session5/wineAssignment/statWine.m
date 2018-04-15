@@ -1,6 +1,6 @@
 
 
-logPath='~/Documents/Exercises Session/ANN/Session5/log2-2.txt';
+logPath='~/dev/ANN_exercises/.log/log5-2.txt';
 fileID = fopen(logPath,'w');
 formatSpec = '%8s %12s %8s %8s %10s %12s %8s %8s %8s %8s %8s %8s %8s %8s %8s %8s\n';
 fprintf(fileID,formatSpec,'maxFail','n_units','n_feat','time','trainAlg','perfFcn','transferFcn','tr','tr_e','tr_e_b','v', 'v_e','v_e_b','t','t_e','t_e_b');

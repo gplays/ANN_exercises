@@ -1,12 +1,12 @@
 
 
-logPath='~/Documents/Exercises Session/ANN/Session5/log1-2.txt';
+logPath='~/dev/ANN_exercises/.log/log5-1.txt.txt';
 fileID = fopen(logPath,'w');
 formatSpec = '%12s %8s %8s %12s %10s %10s %8s\n';
 fprintf(fileID,formatSpec,'divideFcn','maxTime','reg','n_units','perfMean','meanPerf','e');
 fclose(fileID);
 nEpochs = 1000;
-for divide = {'dividerand'}
+for divide = {'dividerand','divideint'}
     divideFcn = divide{1};
     for maxTime = [30 100]
         for reg = [0 5 10]

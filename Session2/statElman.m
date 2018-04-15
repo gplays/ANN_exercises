@@ -2,7 +2,7 @@
 fh = localfunctions;
 fncs = {'linSin', 'sqrtSin', 'affLinSin', 'expLinSin'};
 numRep = 5;
-logPath = '~/Documents/Exercises Session/ANN/Session2/log.txt';
+logPath = '~/dev/ANN_exercises/.log/log2-1.txt';
 fileID = fopen(logPath,'a');
 formatSpec = '%10s %8s %6s %6s %8s %8s %8s\n';
 fprintf(fileID,formatSpec,'func','#train','width','epoch', 'tr_mse', 'tst_mse','cputime');

@@ -1,7 +1,7 @@
 
 trainAlgs = {'traingd', 'traingda', 'traincgf','traincgp','trainbfg','trainlm','trainbr'};
 numRep = 5;
-logPath='~/Documents/Exercises Session/ANN/Session1/log.txt';
+logPath='~/dev/ANN_exercises/.log/log1-1.txt';
 fileID = fopen(logPath,'w');
 formatSpec = '%10s %8s %6s %6s %6s %8s %8s %8s %8s\n';
 fprintf(fileID,formatSpec,'trainAlg','batch_s','#data','noise', 'units', 'perfwgn','tperfwgn','tperf','cputime');
