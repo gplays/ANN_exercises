@@ -1,22 +1,22 @@
 
 
-logPath='~/dev/ANN_exercises/.log/log5-2.txt';
+logPath='~/dev/ANN_exercises/.log/log5-2-1.txt';
 fileID = fopen(logPath,'w');
 formatSpec = '%8s %12s %8s %8s %10s %12s %8s %8s %8s %8s %8s %8s %8s %8s %8s %8s\n';
 fprintf(fileID,formatSpec,'maxFail','n_units','n_feat','time','trainAlg','perfFcn','transferFcn','tr','tr_e','tr_e_b','v', 'v_e','v_e_b','t','t_e','t_e_b');
 fclose(fileID);
-numNN = 50;
+numNN = 20;
 for maxFail = [10 100]
     for n_feat = [1 2 3 5 8 11]
-        for n_units = {10 50 100 [10 10] [20 5 20] [20 20] [10 10 10]}
+        for n_units = {10 50 100 [10 10] [15 15]}
             t = cputime;
             ccr= ones(5,3,3);
-            for keepBest = [5 10 50]
+            for keepBest = [5 10]
                 for trainAlg = {'trainlm', 'trainscg', 'trainrp'}
-                    for perfFcn = {'sae', 'sse', 'mse', 'mae', 'crossentropy'}
+                    for perfFcn = {'mse', 'mae', 'crossentropy'}
                         if ~strcmp(trainAlg{1},'trainlm')||(strcmp(perfFcn{1},'sse')||strcmp(perfFcn{1},'mse'))
                             for transferFcn = {'tansig','logsig'}
-                                for seed = 1:5
+                                for seed = 1:3
                                     ccr(seed,:,:) = classifier(maxFail, n_units{1}, n_feat, numNN,seed,keepBest,trainAlg{1},perfFcn{1},transferFcn{1});
                                 end
                                 ccr_mean= mean(ccr);
