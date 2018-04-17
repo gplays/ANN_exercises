@@ -8,7 +8,7 @@ fclose(fileID);
 numNN = 20;
 for maxFail = [10 100]
     for n_feat = [1 2 3 5 8 11]
-        for n_units = {10 50 100 [10 10] [15 15]}
+        parfor n_units = {10 50 100 [10 10] [15 15]}
             t = cputime;
             ccr= ones(5,3,3);
             for keepBest = [5 10]
